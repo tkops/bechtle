@@ -1,1 +1,1 @@
-# NGINX Website based on UBI
+# Bechtle Misc
