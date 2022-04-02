@@ -14,6 +14,6 @@ oc create -n bechtle deployment bechtle-web --replicas=2 --image=quay.io/t_koch/
 
 oc expose deployment -n bechtle bechtle-web --name=bechtle-web-svc --port=8080  -oyaml --dry-run=client |oc apply -f -
 
-oc expose service -n bechtle bechtle-web-svc --name=bechlte-web-route  -oyaml --dry-run=client |oc apply -f -
+oc expose service -n bechtle bechtle-web-svc --name=bechtle-web-route  -oyaml --dry-run=client |oc apply -f -
 
 
