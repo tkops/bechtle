@@ -1,0 +1,19 @@
+podman ps -aq|xargs podman rm -f 2>/dev/null
+podman images -q|xargs prodman rmi -f 2>/dev/null
+oc delete all --all -n bechtle
+
+
+echo "Guten Morgen Team Datacennter! Version: v3.0" > index.html
+podman build -t bechtle-web:v3.0 .
+
+podman tag  bechtle-web:v3.0 quay.io/t_koch/bechtle-web:v3.0
+
+podman push quay.io/t_koch/bechtle-web:v3.0
+
+oc create -n bechtle deployment bechtle-web --replicas=2 --image=quay.io/t_koch/bechtle-web:v3.0  -oyaml --dry-run=client |oc apply -f -
+
+oc expose deployment -n bechtle bchtle-web --name=bechtle-web-svc --port=8080  -oyaml --dry-run=client |oc apply -f -
+
+oc expose service -n bechtle bechtle-web-svc --name=bechlte-web-route  -oyaml --dry-run=client |oc apply -f -
+
+
