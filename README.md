@@ -23,3 +23,10 @@ dev1 -- 1. pull base image --- pub1
 dev1 -- 3. push custom image --- priv1
 priv1 -- 4. deploy --- ocp1
 ```
+## Instructions
+```
+podman login -u t_koch quay.io
+podman build -t bechtle-web
+podman tag bechtle-web quay.io/t_koch/bechtle-web:v1.0
+podman push quay.io/t_koch/bechtle-web:v1.0
+```
