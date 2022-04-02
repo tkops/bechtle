@@ -11,6 +11,7 @@ fi
 
 # clean up container and ocp deployment
 podman ps -aq|xargs podman rm -f 2>/dev/null
+podman images -q|xargs prodman rmi -f 2>/dev/null
 
 # set version in index.html
 echo "Hello Team Datacenter! Version: $version" > index.html
