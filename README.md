@@ -5,10 +5,10 @@ flowchart TD
   subgraph dev1[Developer]
     build[2. build custom image]
   end
-  subgraph pub1[Public Repository]
+  subgraph pub1[Public Registry]
     docker[docker.io]
   end
-  subgraph priv1[Private Repository]
+  subgraph priv1[Private Registry]
     quay[quay.io/t_koch]
   end
   subgraph ocp1[Openshift]
