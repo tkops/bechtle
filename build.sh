@@ -35,10 +35,10 @@ curl localhost:${lport}
 oc create -n $namespace deployment $name --replicas=2 --image=$image  -oyaml --dry-run=client |oc apply -f -
 
 # create openshift service
-oc expose deployment -n $namespace $name --port=8080  -oyaml --dry-run=client |oc apply -f -
+oc expose deployment -n $namespace ${name} --name=${name}-svc --port=8080  -oyaml --dry-run=client |oc apply -f -
 
 
 # create route to service
-oc expose service -n $namespace $name  -oyaml --dry-run=client |oc apply -f -
+oc expose service -n $namespace ${name}-svc --name=${name}-route  -oyaml --dry-run=client |oc apply -f -
 
 
