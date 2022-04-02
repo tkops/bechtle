@@ -1,0 +1,7 @@
+name=bechtle-web
+version=$1
+registry=quay.io/t_koch
+image=${registry}/${name}:${version}
+cport=8080
+lport=8080
+namespace=bechtle
