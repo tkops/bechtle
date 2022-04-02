@@ -6,7 +6,7 @@ flowchart TD
     build[2. build custom image]
   end
   subgraph pub1[Public Registry]
-    docker[docker.io]
+    docker[registry.redhat.io]
   end
   subgraph priv1[Private Registry]
     quay[quay.io/t_koch]
