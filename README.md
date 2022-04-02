@@ -19,4 +19,5 @@ graph BT
       w1;w2
     end
   end
+dev1 --> pub1
 ```
