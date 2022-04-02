@@ -1,9 +1,9 @@
 # Bechtle Misc
 ## Flowchart
 ```mermaid
-graph BT
+flowchart TD
   subgraph dev1[Developer]
-    build
+    build[2. build custom image]
   end
   subgraph pub1[Public Repository]
     docker[docker.io]
@@ -19,5 +19,7 @@ graph BT
       w1;w2
     end
   end
-dev1 --> pub1
+dev1 -- 1. pull base image --- pub1
+dev1 -- 3. push custom image --- priv1
+priv1 -- 4. deploy --- ocp1
 ```
