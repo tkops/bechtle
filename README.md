@@ -37,11 +37,11 @@ flowchart TD
       bechtle-web-C
     end
     subgraph pod[Pods]
-      bechtle-web-B-01
-      bechtle-web-B-02
+      pod1[bechtle-web-B-01]
+      pod2[bechtle-web-B-02]
     end
     subgraph svc[Service]
-      bechtle-web-svc
+      svc1[bechtle-web-svc]
     end
     subgraph route[Route]
       bechtle-web-route
@@ -54,7 +54,8 @@ flowchart TD
   deploy -- create --> rs
   rs -- create --> pod
   route -- route --> svc
-  svc -- route --> pod
+  svc1 -- route --> pod1
+  svc1 -- route --> pod2
 ```
 
 ## Instructions
