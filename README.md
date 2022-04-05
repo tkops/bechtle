@@ -50,7 +50,7 @@ flowchart TD
   subgraph client[Client]
     user[User]
   end
-  user --http--> route
+  user --http--> bechtle-web-route
   user --deploy-->deploy
   deploy -- create --> rs
   rs -- create --> pod
