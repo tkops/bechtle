@@ -54,7 +54,7 @@ flowchart TD
   user --deploy-->deploy
   deploy -- create --> rs
   rs -- create --> pod
-  bechtle-web -- route --> svc1
+  bechtle-web-route -- route --> svc1
   svc1 -- route --> pod1
   svc1 -- route --> pod2
 ```
