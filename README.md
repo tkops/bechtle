@@ -51,6 +51,7 @@ flowchart TD
     user[User]
   end
   user --http--> route
+  user --deploy-->deploy
   deploy -- create --> rs
   rs -- create --> pod
   route -- route --> svc
