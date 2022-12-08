@@ -1,4 +1,5 @@
 # Kubernetes / Openshift Deployment Example
+||Dieser Text ist versteckt||
 ## Flowchart Build Process
 ```mermaid
 flowchart TD
